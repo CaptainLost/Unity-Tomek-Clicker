@@ -6,14 +6,11 @@ public class UpgradesVisual : MonoBehaviour
 {
     [SerializeField] private GameObject upgradePrefab;
 
+    private List<Upgrade> upgradeObjects = new List<Upgrade>();
+
     private void Start()
     {
         CreateUpgrades();
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void CreateUpgrades()
@@ -25,7 +22,19 @@ public class UpgradesVisual : MonoBehaviour
             GameObject obj = Instantiate(upgradePrefab, transform);
             Upgrade upgrade = obj.GetComponent<Upgrade>();
 
-            upgrade.UpdateData(upgradeSO);
+            upgrade.UpdateVisual(upgradeSO);
+
+            upgradeObjects.Add(upgrade);
+        }
+    }
+
+    public void UpdateUpgrades()
+    {
+        for (int i = 0; i < upgradeObjects.Count; i++)
+        {
+            Upgrade upgrade = upgradeObjects[i];
+
+            upgrade.UpdateVisual();
         }
     }
 }

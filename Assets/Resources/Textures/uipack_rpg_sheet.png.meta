@@ -197,7 +197,7 @@ TextureImporter:
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,6 +205,69 @@ TextureImporter:
       bones: []
       spriteID: bb6b154777a359e4d8adb562de6b230c
       internalID: 1940719436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 418
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e416c45b4a258fd4ea1a0c1bdc9f1d35
+      internalID: 308462201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 190
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d96f42d359982408db8b44538bf73b
+      internalID: -1938823107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 323
+        width: 190
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d570e46219820bb4bafe891391a77242
+      internalID: -1862791074
       vertices: []
       indices: 
       edges: []
@@ -220,10 +283,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      uipack_rpg_sheet_6: -1938823107
+      uipack_rpg_sheet_5: 308462201
       uipack_rpg_sheet_3: 740974365
       uipack_rpg_sheet_0: 286549401
       uipack_rpg_sheet_4: 1940719436
       uipack_rpg_sheet_1: -313860761
+      uipack_rpg_sheet_7: -1862791074
       uipack_rpg_sheet_2: 853310339
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -1,66 +1,114 @@
+using BreakInfinity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
 
     [SerializeField] private UpgradeDataSO upgradeData;
+    [SerializeField] private PlayerDataSO playerData;
 
-    private Dictionary<UpgradeSO, int> upgradeIndexes = new Dictionary<UpgradeSO, int>();
+    [SerializeField] private UnityEvent onPointsAdded = new UnityEvent();
+    [SerializeField] private UnityEvent onPointsRemoved = new UnityEvent();
+    [SerializeField] private UnityEvent onUpgradeAdded = new UnityEvent();
+    [SerializeField] private UnityEvent onUpgradeRemoved = new UnityEvent();
 
-    public PlayerData PlayerData { get { return playerData; } }
+    public PlayerDataSO PlayerData { get { return playerData; } }
     public UpgradeDataSO UpgradeData { get { return upgradeData; } }
-
-    private PlayerData playerData;
 
     private void Awake()
     {
         Instance = this;
-
-        playerData = new PlayerData();
     }
 
-    private void Start()
+    public void AddPoints(BigDouble points)
     {
-        for (int i = 0; i < upgradeData.Upgrades.Count; i++)
+        playerData.points += points;
+
+        onPointsAdded?.Invoke();
+    }
+
+    public void RemovePoints(BigDouble points)
+    {
+        playerData.points -= points;
+
+        if (playerData.points < 0)
+            playerData.points = 0;
+
+        onPointsRemoved?.Invoke();
+    }
+
+    public void SetPoints(BigDouble points)
+    {
+        playerData.points = points;
+    }
+
+    public bool HasPoints(BigDouble points)
+    {
+        return playerData.points >= points;
+    }
+
+    public BigDouble GetPoints()
+    {
+        return playerData.points;
+    }
+
+    public UpgradeStorageData GetUpgradeData(UpgradeSO requestedData)
+    {
+        foreach (UpgradeStorageData data in playerData.upgrades)
         {
-            upgradeIndexes.Add(upgradeData.Upgrades[i], i);
+            if (data.upgrade == requestedData)
+            {
+                return data;
+            }
         }
 
-    }
+        UpgradeStorageData newData = new UpgradeStorageData(requestedData, 0);
+        playerData.upgrades.Add(newData);
 
-    private void Update()
-    {
-        
-    }
-
-    public void AddPointsForClick()
-    {
-        playerData.points += 1;
+        return newData;
     }
 
     public void AddUpgrade(UpgradeSO upgradeData, int amount)
     {
-        int upgradeIndex = 0;
+        UpgradeStorageData data = GetUpgradeData(upgradeData);
 
-        if (!upgradeIndexes.TryGetValue(upgradeData, out upgradeIndex))
-            return;
+        data.amount = data.amount + amount;
 
-        if (!playerData.upgrades.ContainsKey(upgradeIndex))
-            playerData.upgrades.Add(upgradeIndex, 0);
+        onUpgradeAdded?.Invoke();
+    }
 
-        playerData.upgrades[upgradeIndex] = playerData.upgrades[upgradeIndex] + amount;
+    public void RemoveUpgrade(UpgradeSO upgradeData, int amount)
+    {
+        UpgradeStorageData data = GetUpgradeData(upgradeData);
+
+        data.amount = data.amount - amount;
+
+        onUpgradeRemoved?.Invoke();
     }
 
     public int GetAmountOfUpgrade(UpgradeSO upgradeData)
     {
-        int upgradeIndex = 0;
+        UpgradeStorageData data = GetUpgradeData(upgradeData);
 
-        if (!upgradeIndexes.TryGetValue(upgradeData, out upgradeIndex))
-            return 0;
+        return data.amount;
+    }
 
-        return playerData.upgrades[upgradeIndex];
+    public bool BuyUpgrade(UpgradeSO upgradeData)
+    {
+        BigDouble price = UpgradeHelper.CalculatePrice(upgradeData);
+
+        if (HasPoints(price))
+        {
+            RemovePoints(price);
+            AddUpgrade(upgradeData, 1);
+
+            return true;
+        }
+
+        return false;
     }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b845fd3302e233549a7e7ab95cceec4d, type: 3}
-  m_Name: Kasia Upgrade
+  m_Name: Energol Upgrade
   m_EditorClassIdentifier: 
-  upgradeName: Kasia
-  sprite: {fileID: 21300000, guid: 4097fd6cff670fc438c65ea127885aa0, type: 3}
-  basePrice: 1
-  priceModifier: 0
+  upgradeName: Energetyk
+  sprite: {fileID: 21300000, guid: 1b091e6ae3ec18c448d3564456291570, type: 3}
+  basePrice: 20
+  priceModifier: 1.15
   basePoints: 1
   clickBonusPoints: 1

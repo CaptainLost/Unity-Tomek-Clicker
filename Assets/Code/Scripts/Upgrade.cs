@@ -9,27 +9,32 @@ public class Upgrade : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private TextMeshProUGUI priceText;
 
     private UpgradeSO upgradeData;
 
     public UpgradeSO UpgradeData { get { return upgradeData; } }
 
-    public void UpdateData(UpgradeSO upgradeSO)
+    public void UpdateVisual(UpgradeSO upgradeSO)
     {
         upgradeData = upgradeSO;
 
-        UpdateData();
+        UpdateVisual();
     }
 
-    public void UpdateData()
+    public void UpdateVisual()
     {
+        if (upgradeData == null)
+            return;
+
         image.sprite = upgradeData.Texture;
         titleText.text = upgradeData.UpgradeName;
         amountText.text = 'x' + DataManager.Instance.GetAmountOfUpgrade(upgradeData).ToString();
+        priceText.text = PointsHelper.FormatPoints(UpgradeHelper.CalculatePrice(upgradeData));
     }
 
-    public void AddUpgrade()
+    public void BuyUpgrade()
     {
-        DataManager.Instance.AddUpgrade(UpgradeData, 1);
+        DataManager.Instance.BuyUpgrade(upgradeData);
     }
 }

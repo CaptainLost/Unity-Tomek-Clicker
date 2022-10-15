@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c248f8de0746c4e99ecfdcd0aebca6, type: 3}
+  m_Name: Player Data
+  m_EditorClassIdentifier: 
+  points:
+    mantissa: 3.2
+    exponent: 1
+  upgrades:
+  - upgrade: {fileID: 11400000, guid: 076bbab5cf9b88b4fa65b3c01f1b6872, type: 2}
+    amount: 0
+  - upgrade: {fileID: 11400000, guid: 10b068d6d528212439d177ed2bfa4593, type: 2}
+    amount: 0
+  - upgrade: {fileID: 11400000, guid: 5e6fc7f168d9a4542b4b4d56046a52aa, type: 2}
+    amount: 0
