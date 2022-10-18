@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class UpgradeLogic : MonoBehaviour
+public abstract class UpgradeLogicResolver : MonoBehaviour
 {
     [SerializeField] protected UpgradeSO upgrade;
 

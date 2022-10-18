@@ -1,6 +1,6 @@
 using BreakInfinity;
 
-public class SimpleLogic : UpgradeLogic
+public class SimpleLogicResolver : UpgradeLogicResolver
 {
     protected override void Tick()
     {

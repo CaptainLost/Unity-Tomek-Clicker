@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Pantofle
   sprite: {fileID: 21300000, guid: b578066bb7277b64a9cf112cb5d3d6fa, type: 3}
-  basePrice: 1
-  priceModifier: 0
-  basePoints: 1
-  clickBonusPoints: 1
+  basePrice:
+    mantissa: 2
+    exponent: 1
+  priceModifier: 1.15
+  basePoints:
+    mantissa: 1
+    exponent: 0
+  clickBonusPoints:
+    mantissa: 1
+    exponent: 0

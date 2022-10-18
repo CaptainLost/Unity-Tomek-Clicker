@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   points:
-    mantissa: 3.2
-    exponent: 1
+    mantissa: 0
+    exponent: 0
   upgrades:
   - upgrade: {fileID: 11400000, guid: 076bbab5cf9b88b4fa65b3c01f1b6872, type: 2}
     amount: 0

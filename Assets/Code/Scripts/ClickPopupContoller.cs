@@ -1,7 +1,7 @@
-using BreakInfinity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BreakInfinity;
 
 public class ClickPopupContoller : MonoBehaviour
 {

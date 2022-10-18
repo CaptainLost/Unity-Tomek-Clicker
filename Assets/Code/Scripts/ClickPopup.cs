@@ -27,7 +27,7 @@ public class ClickPopup : MonoBehaviour
         xMove = Random.Range(0f, 1f) > 0.5f ? xMove * -1f : xMove;
         yMove = Random.Range(0f, 1f) > 0.5f ? yMove * -1f : yMove;
 
-        rigid2D.AddForce(new Vector2(xMove, yMove) * moveForce, ForceMode2D.Impulse);
+        rigid2D.AddForce(new UnityEngine.Vector2(xMove, yMove) * moveForce, ForceMode2D.Impulse);
     }
 
     private void Update()

@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Energetyk
   sprite: {fileID: 21300000, guid: 1b091e6ae3ec18c448d3564456291570, type: 3}
-  basePrice: 20
+  basePrice:
+    mantissa: 2
+    exponent: 1
   priceModifier: 1.15
-  basePoints: 1
-  clickBonusPoints: 1
+  basePoints:
+    mantissa: 1
+    exponent: 0
+  clickBonusPoints:
+    mantissa: 1
+    exponent: 0
