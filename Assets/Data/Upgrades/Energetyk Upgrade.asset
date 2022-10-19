@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b845fd3302e233549a7e7ab95cceec4d, type: 3}
-  m_Name: Energol Upgrade
+  m_Name: Energetyk Upgrade
   m_EditorClassIdentifier: 
   upgradeName: Energetyk
   sprite: {fileID: 21300000, guid: 1b091e6ae3ec18c448d3564456291570, type: 3}
   basePrice:
-    mantissa: 2
-    exponent: 1
+    mantissa: 1
+    exponent: 2
   priceModifier: 1.15
   basePoints:
     mantissa: 1
-    exponent: 0
+    exponent: -1
   clickBonusPoints:
-    mantissa: 1
+    mantissa: 0
     exponent: 0

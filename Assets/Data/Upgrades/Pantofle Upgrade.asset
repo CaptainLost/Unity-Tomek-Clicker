@@ -15,8 +15,8 @@ MonoBehaviour:
   upgradeName: Pantofle
   sprite: {fileID: 21300000, guid: b578066bb7277b64a9cf112cb5d3d6fa, type: 3}
   basePrice:
-    mantissa: 2
-    exponent: 1
+    mantissa: 1.1
+    exponent: 3
   priceModifier: 1.15
   basePoints:
     mantissa: 1
