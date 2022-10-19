@@ -3,4 +3,4 @@ Incremental game for a semestr credit with a joke, initially player clicks on my
 
 The game is in Polish.
 
-![alt text](imgs/clicker1.png)
+![preview](imgs/clicker-1.png)
