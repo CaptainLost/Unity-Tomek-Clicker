@@ -3,4 +3,6 @@ Incremental game for a semestr credit with a joke, initially player clicks on my
 
 The game is in Polish.
 
+Unity version: 2021.3.11f1
+
 ![preview](imgs/clicker-1.png)
