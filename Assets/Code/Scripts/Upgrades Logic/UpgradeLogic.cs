@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BreakInfinity;
 
-public abstract class UpgradeLogicResolver : MonoBehaviour
+public abstract class UpgradeLogic : MonoBehaviour
 {
     [SerializeField] protected UpgradeSO upgrade;
+    [SerializeField] protected float tickTime;
 
     private IEnumerator coroutine;
 
     protected abstract void Tick();
+
+    public abstract BigDouble CalculateTickPoints();
+    public abstract BigDouble CalulateClickPoints();
+
+    public float TickTime { get { return tickTime; } }
 
     private void Start()
     {
@@ -27,14 +34,7 @@ public abstract class UpgradeLogicResolver : MonoBehaviour
         {
             Tick();
 
-            yield return new WaitForSeconds(GetWaitTime());
+            yield return new WaitForSeconds(tickTime);
         }
-    }
-
-    private float GetWaitTime()
-    {
-        float time = 1f;
-
-        return time;
     }
 }

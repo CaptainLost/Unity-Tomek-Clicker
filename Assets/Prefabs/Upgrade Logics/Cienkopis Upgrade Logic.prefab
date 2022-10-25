@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5012814195883078543}
   - component: {fileID: 3672754947560640382}
   m_Layer: 0
-  m_Name: Kasia Logic Resolver
+  m_Name: Cienkopis Upgrade Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08204555d736244cac42164e58a56f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 11400000, guid: 10b068d6d528212439d177ed2bfa4593, type: 2}
+  upgrade: {fileID: 11400000, guid: 5e6fc7f168d9a4542b4b4d56046a52aa, type: 2}
+  tickTime: 1
+  baseClickPoints:
+    mantissa: 1
+    exponent: -1

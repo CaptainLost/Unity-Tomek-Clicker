@@ -14,7 +14,7 @@ public class PointPerSecondText : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        textObject.text = PointsHelper.FormatPoints(UpgradeHelper.CalculatePointsPerSecond()) + " na sekunde";
+        textObject.text = PointsHelper.FormatPoints(UpgradeManager.Instance.CalulatePointsPerSeconds()) + " na sekunde";
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup);
     }

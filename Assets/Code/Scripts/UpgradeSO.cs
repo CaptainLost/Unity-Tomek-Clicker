@@ -13,14 +13,8 @@ public class UpgradeSO : ScriptableObject
     [SerializeField] private BigDouble basePrice;
     [SerializeField] private float priceModifier = 1.15f;
 
-    [Header("Points")]
-    [SerializeField] private BigDouble basePoints = 1;
-    [SerializeField] private BigDouble clickBonusPoints = 1;
-
     public string UpgradeName { get { return upgradeName; } }
     public Sprite Texture { get { return sprite; } }
     public BigDouble BasePrice { get { return basePrice; } }
     public float PriceModifier { get { return priceModifier; } }
-    public BigDouble BasePoints { get { return basePoints; } }
-    public BigDouble ClickBonusPoints { get { return clickBonusPoints; } }
 }

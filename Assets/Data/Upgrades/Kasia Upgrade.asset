@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kasia Upgrade
   m_EditorClassIdentifier: 
   upgradeName: Kasia
-  sprite: {fileID: 21300000, guid: 4097fd6cff670fc438c65ea127885aa0, type: 3}
+  sprite: {fileID: 21300000, guid: 4a8ff9747fd00b54db59f5d675f56349, type: 3}
   basePrice:
     mantissa: 1.2
     exponent: 4

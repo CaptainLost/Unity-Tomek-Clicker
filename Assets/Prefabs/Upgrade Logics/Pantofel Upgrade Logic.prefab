@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5012814195883078543}
   - component: {fileID: 3672754947560640382}
   m_Layer: 0
-  m_Name: Pantofel Logic Resolver
+  m_Name: Pantofel Upgrade Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 11400000, guid: 076bbab5cf9b88b4fa65b3c01f1b6872, type: 2}
+  tickTime: 1
+  baseClickPoints:
+    mantissa: 1
+    exponent: -1

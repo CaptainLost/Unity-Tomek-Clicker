@@ -33,4 +33,10 @@ public class TooltipManager : MonoBehaviour
     {
         tooltip.SetText(text);
     }
+
+    public void SetPosition(Vector3 position, Vector2 pivot)
+    {
+        tooltip.SetPivot(pivot);
+        tooltip.SetPosition(position);
+    }
 }
