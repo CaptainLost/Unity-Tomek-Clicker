@@ -19,6 +19,9 @@ public class DataManager : MonoBehaviour
     public PlayerDataSO PlayerData { get { return playerData; } }
     public UpgradeDataSO UpgradeData { get { return upgradeData; } }
 
+    public BigDouble Points { get { return playerData.points; } }
+    public BigDouble HighestAmountOfPoints { get { return playerData.highestAmountOfPoints; } }
+
     private void Awake()
     {
         Instance = this;
@@ -28,6 +31,8 @@ public class DataManager : MonoBehaviour
     {
         playerData.points += points;
 
+        playerData.UpdateHighestAmountOfPoints();
+
         onPointsAdded?.Invoke();
     }
 
@@ -35,8 +40,7 @@ public class DataManager : MonoBehaviour
     {
         playerData.points -= points;
 
-        if (playerData.points < 0)
-            playerData.points = 0;
+        playerData.UpdateHighestAmountOfPoints();
 
         onPointsRemoved?.Invoke();
     }
@@ -44,6 +48,8 @@ public class DataManager : MonoBehaviour
     public void SetPoints(BigDouble points)
     {
         playerData.points = points;
+
+        playerData.UpdateHighestAmountOfPoints();
     }
 
     public bool HasPoints(BigDouble points)
@@ -51,14 +57,9 @@ public class DataManager : MonoBehaviour
         return playerData.points >= points;
     }
 
-    public BigDouble GetPoints()
-    {
-        return playerData.points;
-    }
-
     public UpgradeStorageData GetUpgradeData(UpgradeSO requestedData)
     {
-        foreach (UpgradeStorageData data in playerData.upgrades)
+        foreach (UpgradeStorageData data in playerData.upgradesData)
         {
             if (data.upgrade == requestedData)
             {
@@ -66,8 +67,8 @@ public class DataManager : MonoBehaviour
             }
         }
 
-        UpgradeStorageData newData = new UpgradeStorageData(requestedData, 0);
-        playerData.upgrades.Add(newData);
+        UpgradeStorageData newData = requestedData.CreateStorageObject();
+        playerData.upgradesData.Add(newData);
 
         return newData;
     }

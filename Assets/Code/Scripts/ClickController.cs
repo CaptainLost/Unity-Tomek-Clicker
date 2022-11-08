@@ -6,11 +6,12 @@ using UnityEngine.Events;
 
 public class ClickController : MonoBehaviour
 {
+    [SerializeField] private BigDouble baseClickPoints = 1;
     [SerializeField] private UnityEvent<BigDouble> onClick;
 
     public void Click()
     {
-        BigDouble points = UpgradeHelper.CalculateBonusClickPoints() + 1;
+        BigDouble points = UpgradeManager.Instance.GetClickPointsFromUpgrades() + baseClickPoints;
 
         DataManager.Instance.AddPoints(points);
 

@@ -10,6 +10,7 @@ public class VisualManager : MonoBehaviour
 
     public UnityEvent pointsUpdate = new UnityEvent();
     public UnityEvent upgradesUpdate = new UnityEvent();
+    public UnityEvent printersUpdate = new UnityEvent();
 
     private void Awake()
     {
@@ -21,14 +22,20 @@ public class VisualManager : MonoBehaviour
         pointsUpdate?.Invoke();
     }
 
-    public void UpdateUpgrades()
+    public void UpdateUpgrades() //TODO Change name and fix dependend events calls
     {
         upgradesUpdate?.Invoke();
+    }
+
+    public void UpdatePrinterUpgrades()
+    {
+        printersUpdate?.Invoke();
     }
 
     public void FullUpdate()
     {
         UpdatePoints();
         UpdateUpgrades();
+        UpdatePrinterUpgrades();
     }
 }

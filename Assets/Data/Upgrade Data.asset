@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd6450a768a7864e83c34c282bff2a4, type: 3}
   m_Name: Upgrade Data
   m_EditorClassIdentifier: 
-  upgrades:
+  buildingUpgrades:
   - {fileID: 11400000, guid: 5e6fc7f168d9a4542b4b4d56046a52aa, type: 2}
-  - {fileID: 11400000, guid: 076bbab5cf9b88b4fa65b3c01f1b6872, type: 2}
-  - {fileID: 11400000, guid: 10b068d6d528212439d177ed2bfa4593, type: 2}
+  - {fileID: 11400000, guid: b5bdcf14613af3d429a384b8f4d13881, type: 2}
+  miniUpgrades:
+  - {fileID: 11400000, guid: a392c7cc26ef8e544ac7811f1b9d478d, type: 2}
+  printerUpgrades:
+  - {fileID: 11400000, guid: 10e7a81a5ee2d9a41932b59032b0f0df, type: 2}
+  - {fileID: 11400000, guid: a93fa8dd05603884d90cfd2f24328a2a, type: 2}

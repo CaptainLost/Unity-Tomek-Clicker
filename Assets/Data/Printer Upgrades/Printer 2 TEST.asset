@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d545597b9583d4faba7c66c4806f95, type: 3}
+  m_Name: Printer 2 TEST
+  m_EditorClassIdentifier: 
+  upgradeName: Drukarka taka dojebana
+  sprite: {fileID: 21300000, guid: c69ed519c84a33b43a19503d870cbd85, type: 3}
+  maxAmount: 0
+  maxInk: 100
+  neededPrintAmount: 100
+  basePrintAmount: 0.1

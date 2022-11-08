@@ -17,6 +17,6 @@ public class PointsText : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        textObject.text = "Sprawozdania: " + PointsHelper.FormatPoints(DataManager.Instance.GetPoints());
+        textObject.text = "Sprawozdania: " + PointsHelper.FormatPoints(DataManager.Instance.Points);
     }
 }
