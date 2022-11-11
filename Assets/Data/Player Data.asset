@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c248f8de0746c4e99ecfdcd0aebca6, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   points:
     mantissa: 0
     exponent: 0
@@ -22,3 +23,52 @@ MonoBehaviour:
     amount: 0
   - upgrade: {fileID: 11400000, guid: 5e6fc7f168d9a4542b4b4d56046a52aa, type: 2}
     amount: 0
+=======
+  currentPoints:
+    mantissa: 0
+    exponent: 0
+  highestAmountOfPoints:
+    mantissa: 2.56001031399998
+    exponent: 5
+  upgradesData:
+  - rid: 4799282694345981952
+  - rid: 4799282694345981953
+  - rid: 4799282694345981954
+  - rid: 4799282694345981955
+  printerData: {fileID: 11400000, guid: 6882c8cdff84c2844865863e7f606dd0, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4799282694345981952
+      type: {class: PrinterStorageData, ns: , asm: Assembly-CSharp}
+      data:
+        upgrade: {fileID: 11400000, guid: 10e7a81a5ee2d9a41932b59032b0f0df, type: 2}
+        amount: 1
+        currentInkAmount: 1
+        currentTemperature: 48.399197
+        currentPrintProgress: 27
+        currentInkLevel: 1
+        currentSpeedLevel: 1
+        currentCoolingLevel: 2
+    - rid: 4799282694345981953
+      type: {class: UpgradeStorageData, ns: , asm: Assembly-CSharp}
+      data:
+        upgrade: {fileID: 11400000, guid: 5e6fc7f168d9a4542b4b4d56046a52aa, type: 2}
+        amount: 0
+    - rid: 4799282694345981954
+      type: {class: UpgradeStorageData, ns: , asm: Assembly-CSharp}
+      data:
+        upgrade: {fileID: 11400000, guid: b5bdcf14613af3d429a384b8f4d13881, type: 2}
+        amount: 0
+    - rid: 4799282694345981955
+      type: {class: PrinterStorageData, ns: , asm: Assembly-CSharp}
+      data:
+        upgrade: {fileID: 11400000, guid: a93fa8dd05603884d90cfd2f24328a2a, type: 2}
+        amount: 22
+        currentInkAmount: 1
+        currentTemperature: 0
+        currentPrintProgress: 0
+        currentInkLevel: 0
+        currentSpeedLevel: 0
+        currentCoolingLevel: 0
+>>>>>>> Stashed changes

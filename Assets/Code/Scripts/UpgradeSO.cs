@@ -15,6 +15,17 @@ public class UpgradeSO : ScriptableObject
 
     public string UpgradeName { get { return upgradeName; } }
     public Sprite Texture { get { return sprite; } }
+<<<<<<< Updated upstream
     public BigDouble BasePrice { get { return basePrice; } }
     public float PriceModifier { get { return priceModifier; } }
+=======
+    public int MaxAmount { get { return maxAmount; } }
+
+    public abstract BigDouble CalculatePrice(int level);
+    public virtual UpgradeStorageData CreateStorageObject()
+    {
+        return new UpgradeStorageData(this, 0);
+    }
+    public abstract bool IsLocked();
+>>>>>>> Stashed changes
 }

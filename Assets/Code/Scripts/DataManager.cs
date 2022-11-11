@@ -19,6 +19,12 @@ public class DataManager : MonoBehaviour
     public PlayerDataSO PlayerData { get { return playerData; } }
     public UpgradeDataSO UpgradeData { get { return upgradeData; } }
 
+<<<<<<< Updated upstream
+=======
+    public BigDouble Points { get { return playerData.currentPoints; } }
+    public BigDouble HighestAmountOfPoints { get { return playerData.highestAmountOfPoints; } }
+
+>>>>>>> Stashed changes
     private void Awake()
     {
         Instance = this;
@@ -26,14 +32,14 @@ public class DataManager : MonoBehaviour
 
     public void AddPoints(BigDouble points)
     {
-        playerData.points += points;
+        playerData.currentPoints += points;
 
         onPointsAdded?.Invoke();
     }
 
     public void RemovePoints(BigDouble points)
     {
-        playerData.points -= points;
+        playerData.currentPoints -= points;
 
         if (playerData.points < 0)
             playerData.points = 0;
@@ -43,12 +49,18 @@ public class DataManager : MonoBehaviour
 
     public void SetPoints(BigDouble points)
     {
+<<<<<<< Updated upstream
         playerData.points = points;
+=======
+        playerData.currentPoints = points;
+
+        playerData.UpdateHighestAmountOfPoints();
+>>>>>>> Stashed changes
     }
 
     public bool HasPoints(BigDouble points)
     {
-        return playerData.points >= points;
+        return playerData.currentPoints >= points;
     }
 
     public BigDouble GetPoints()
@@ -101,7 +113,7 @@ public class DataManager : MonoBehaviour
     {
         BigDouble price = UpgradeHelper.CalculatePrice(upgradeData);
 
-        if (HasPoints(price))
+        if (GetAmountOfUpgrade(upgradeData) < upgradeData.MaxAmount && HasPoints(price))
         {
             RemovePoints(price);
             AddUpgrade(upgradeData, 1);
