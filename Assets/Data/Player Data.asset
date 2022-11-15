@@ -15,24 +15,16 @@ MonoBehaviour:
   points:
     mantissa: 7.12000005126005
     exponent: 1
-  upgradesData:
-  - rid: 4799282694345981952
-  - rid: 4799282694345981953
-  - rid: 4799282694345981954
-  - rid: 4799282694345981955
   highestAmountOfPoints:
     mantissa: 7.12000005126005
     exponent: 1
+  upgradesData:
+  - rid: 4799282694345981953
+  - rid: 4799282694345981954
+  <PrinterData>k__BackingField: {fileID: 11400000, guid: 52fd2555e473c884ab141dbe8d1c6d6a, type: 2}
   references:
     version: 2
     RefIds:
-    - rid: 4799282694345981952
-      type: {class: PrinterStorageData, ns: , asm: Assembly-CSharp}
-      data:
-        upgrade: {fileID: 11400000, guid: 10e7a81a5ee2d9a41932b59032b0f0df, type: 2}
-        amount: 11
-        currentInkAmount: 1
-        currentPrintProgress: 71
     - rid: 4799282694345981953
       type: {class: UpgradeStorageData, ns: , asm: Assembly-CSharp}
       data:
@@ -43,10 +35,3 @@ MonoBehaviour:
       data:
         upgrade: {fileID: 11400000, guid: b5bdcf14613af3d429a384b8f4d13881, type: 2}
         amount: 0
-    - rid: 4799282694345981955
-      type: {class: PrinterStorageData, ns: , asm: Assembly-CSharp}
-      data:
-        upgrade: {fileID: 11400000, guid: a93fa8dd05603884d90cfd2f24328a2a, type: 2}
-        amount: 22
-        currentInkAmount: 1
-        currentPrintProgress: 0

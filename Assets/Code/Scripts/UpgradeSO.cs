@@ -12,6 +12,7 @@ public abstract class UpgradeSO : ScriptableObject
 
     public string UpgradeName { get { return upgradeName; } }
     public Sprite Texture { get { return sprite; } }
+    public int MaxAmount { get { return maxAmount; } }
 
     public abstract BigDouble CalculatePrice(int level);
     public virtual UpgradeStorageData CreateStorageObject()

@@ -17,26 +17,15 @@ public class UpgradeStorageData
     public int amount;
 }
 
-[Serializable]
-public class PrinterStorageData : UpgradeStorageData
-{
-    public PrinterStorageData(PrinterUpgradeSO _upgrade, int _amount)
-        : base(_upgrade, _amount)
-    {
-
-    }
-
-    public float currentInkAmount = 1f;
-    public float currentPrintProgress = 0f;
-}
-
-[CreateAssetMenu(fileName = "New Player Data", menuName = "CptLost/Player Data")]
+[CreateAssetMenu(fileName = "New Player Data", menuName = "CptLost/Data/Player Data")]
 public class PlayerDataSO : ScriptableObject
 {
-    public BigDouble points = 0;
-    [SerializeReference] public List<UpgradeStorageData> upgradesData = new List<UpgradeStorageData>();
-
+    [Header("Points")]
+    [SerializeField] public BigDouble points = 0;
     public BigDouble highestAmountOfPoints = 0;
+
+    [SerializeReference] public List<UpgradeStorageData> upgradesData = new List<UpgradeStorageData>();
+    [field: SerializeField] public PrinterDataSO PrinterData { get; private set; }
 
     public void UpdateHighestAmountOfPoints()
     {
