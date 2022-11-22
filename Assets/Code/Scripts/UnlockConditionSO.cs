@@ -1,3 +1,4 @@
+using BreakInfinity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,9 +15,13 @@ public struct UnlockUpgrade
 public class UnlockConditionSO : ScriptableObject
 {
     [field: SerializeField] public List<UnlockUpgrade> unlockUpgrades;
+    [field: SerializeField] public BigDouble NeededPoints { get; private set; }
 
     public bool IsMet()
     {
+        if (DataManager.Instance.Points < NeededPoints)
+            return false;
+
         foreach (UnlockUpgrade unlock in unlockUpgrades)
         {
             if (DataManager.Instance.GetAmountOfUpgrade(unlock.Upgrade) < unlock.Amount)

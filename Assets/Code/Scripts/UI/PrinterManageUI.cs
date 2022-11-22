@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PrinterManageUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private PrinterSlotUI holdingSlot;
+    [SerializeField] private PrinterSetVisualUI visualSet;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateUI()
     {
-        
+        visualSet.Set(holdingSlot.StorageData.PrinterType);
+    }
+
+    public void BuySpeedUpgrade()
+    {
+        PrinterManager.Instance.BuyPrinterSpeedUpgrade(holdingSlot.StorageData);
     }
 }

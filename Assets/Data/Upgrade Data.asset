@@ -18,3 +18,4 @@ MonoBehaviour:
   <MiniUpgrades>k__BackingField: []
   <PrinterList>k__BackingField:
   - {fileID: 11400000, guid: 269c79ba25b32b54fbf6f1815f40045f, type: 2}
+  - {fileID: 11400000, guid: 31037c49d6d19a04397f46729fee3b34, type: 2}

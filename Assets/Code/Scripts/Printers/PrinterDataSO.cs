@@ -14,7 +14,7 @@ public class PrinterStorageData
 
     [field: SerializeField] public PrinterSO PrinterType { get; private set; }
 
-    [field: SerializeField] public int SpeedLevel { get; private set; } = 0;
+    [field: SerializeField] public int SpeedLevel { get; set; } = 0;
     [field: SerializeField] public int InkLevel { get; private set; } = 0;
     [field: SerializeField] public int CoolingLevel { get; private set; } = 0;
 

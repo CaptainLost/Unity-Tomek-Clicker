@@ -7,6 +7,8 @@ public class PrinterInitUI : MonoBehaviour
     [SerializeField] private PlayerDataSO playerData;
     [SerializeField] private PrinterSlotUI printerSlotPrefab;
 
+    private List<PrinterSlotUI> printerSlots = new List<PrinterSlotUI>();
+
     private void Start()
     {
         UpdatePrintersUI();
@@ -19,18 +21,31 @@ public class PrinterInitUI : MonoBehaviour
 
     public void UpdatePrintersUI()
     {
-        foreach (PrinterStorageData data in playerData.PrinterData.SlotData)
+        if (playerData.PrinterData.PrinterSlots > printerSlots.Count)
         {
-            PrinterSlotUI slotUI = Instantiate(printerSlotPrefab, transform);
+            int slotsToAdd = playerData.PrinterData.PrinterSlots - printerSlots.Count;
 
-            slotUI.Init(data);
+            for (int i = 0; i < slotsToAdd; i++)
+            {
+                PrinterSlotUI slotUI = Instantiate(printerSlotPrefab, transform);
+
+                printerSlots.Add(slotUI);
+            }
         }
 
-        int slotsToAdd = playerData.PrinterData.PrinterSlots - playerData.PrinterData.SlotData.Count;
-        for (int i = 0; i < slotsToAdd; i++)
+
+        for (int i = 0; i < printerSlots.Count; i++)
         {
-            PrinterSlotUI slotUI = Instantiate(printerSlotPrefab, transform);
-            slotUI.Init(null);
+            if (playerData.PrinterData.SlotData.Count > i)
+            {
+                PrinterStorageData data = playerData.PrinterData.SlotData[i];
+
+                printerSlots[i].SetManageStage(data);
+
+                continue;
+            }
+
+            printerSlots[i].SetSelectStage();
         }
     }
 }

@@ -7,6 +7,7 @@ public class PrinterSO : ScriptableObject
 {
     [field: SerializeField] public string PrinterName { get; private set; }
     [field: SerializeField] public Sprite Sprite { get; private set; }
+    [field: SerializeField] public UnlockConditionSO UnlockCondition { get; private set; }
 
     [field: Header("Max Levels")]
     [field: SerializeField] public int MaxLevelSpeed { get; private set; }

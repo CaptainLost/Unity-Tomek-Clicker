@@ -18,7 +18,11 @@ public class PrinterManager : MonoBehaviour
         if (playerData.PrinterData.SlotData.Count >= playerData.PrinterData.PrinterSlots)
             return false;
 
-        playerData.PrinterData.SlotData.Add(new PrinterStorageData(printerType));
+        PrinterStorageData data = new PrinterStorageData(printerType);
+
+        playerData.PrinterData.SlotData.Add(data);
+
+        VisualManager.Instance.UpdatePrinterUpgrades();
 
         return true;
     }
@@ -28,10 +32,21 @@ public class PrinterManager : MonoBehaviour
         if (AddPrinter(printerType))
         {
 
-
             return true;
         }
 
         return false;
+    }
+
+    public bool BuyPrinterSpeedUpgrade(PrinterStorageData data)
+    {
+        if (data.SpeedLevel >= data.PrinterType.MaxLevelSpeed)
+            return false;
+
+        data.SpeedLevel++;
+
+        VisualManager.Instance.UpdatePrinterUpgrades();
+
+        return true;
     }
 }

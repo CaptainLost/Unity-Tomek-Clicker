@@ -5,25 +5,32 @@ using UnityEngine;
 public class PrinterSlotUI : MonoBehaviour
 {
     [SerializeField] private GameObject addWindow;
-    [SerializeField] private GameObject selectWindow;
+    [SerializeField] private PrinterSelectUI selectWindow;
     [SerializeField] private PrinterManageUI manageWindow;
 
-    private PrinterStorageData data;
+    public PrinterStorageData StorageData { get; private set; }
 
     private void Start()
     {
         
     }
 
-    public void Init(PrinterStorageData printerData)
+    public void SetManageStage(PrinterStorageData storageData)
     {
-        data = printerData;
+        StorageData = storageData;
 
-        selectWindow.SetActive(false);
+        addWindow.SetActive(false);
+        selectWindow.gameObject.SetActive(false);
 
-        bool isAddMode = (printerData == null);
+        manageWindow.UpdateUI();
+        manageWindow.gameObject.SetActive(true);
+    }
 
-        addWindow.SetActive(isAddMode);
-        manageWindow.gameObject.SetActive(!isAddMode);
+    public void SetSelectStage()
+    {
+        addWindow.SetActive(true);
+        selectWindow.gameObject.SetActive(false);
+
+        manageWindow.gameObject.SetActive(false);
     }
 }
