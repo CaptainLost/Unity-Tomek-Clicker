@@ -27,7 +27,7 @@ public class VisualManager : MonoBehaviour
         upgradesUpdate?.Invoke();
     }
 
-    public void UpdatePrinterUpgrades()
+    public void UpdatePrinters()
     {
         printersUpdate?.Invoke();
     }
@@ -36,6 +36,6 @@ public class VisualManager : MonoBehaviour
     {
         UpdatePoints();
         UpdateUpgrades();
-        UpdatePrinterUpgrades();
+        UpdatePrinters();
     }
 }

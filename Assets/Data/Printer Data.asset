@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: Printer Data
   m_EditorClassIdentifier: 
   <PrinterSlots>k__BackingField: 4
-  <SlotData>k__BackingField: []
+  <SlotData>k__BackingField:
+  - <PrinterType>k__BackingField: {fileID: 11400000, guid: 269c79ba25b32b54fbf6f1815f40045f, type: 2}
+    <SpeedLevel>k__BackingField: 1
+    <InkLevel>k__BackingField: 3
+    <CoolingLevel>k__BackingField: 1
+    PrintProgress: 77.69993
+    CurrentInk: 175
+    CurrentTemperature: 20
+    IsOverheated: 0

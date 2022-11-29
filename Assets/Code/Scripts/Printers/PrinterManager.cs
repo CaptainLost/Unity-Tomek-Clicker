@@ -22,7 +22,7 @@ public class PrinterManager : MonoBehaviour
 
         playerData.PrinterData.SlotData.Add(data);
 
-        VisualManager.Instance.UpdatePrinterUpgrades();
+        VisualManager.Instance.UpdatePrinters();
 
         return true;
     }
@@ -38,14 +38,52 @@ public class PrinterManager : MonoBehaviour
         return false;
     }
 
-    public bool BuyPrinterSpeedUpgrade(PrinterStorageData data)
+    public static bool BuyPrinterSpeedUpgrade(PrinterStorageData data)
     {
         if (data.SpeedLevel >= data.PrinterType.MaxLevelSpeed)
             return false;
 
         data.SpeedLevel++;
 
-        VisualManager.Instance.UpdatePrinterUpgrades();
+        VisualManager.Instance.UpdatePrinters();
+
+        return true;
+    }
+
+    public static bool AddPrinterInkUpgrade(PrinterStorageData data)
+    {
+        if (data.InkLevel >= data.PrinterType.MaxLevelInk)
+            return false;
+
+        data.InkLevel++;
+
+        VisualManager.Instance.UpdatePrinters();
+
+        return true;
+    }
+
+    public static bool AddPrinterCoolingUpgrade(PrinterStorageData data)
+    {
+        if (data.CoolingLevel >= data.PrinterType.MaxLevelCooling)
+            return false;
+
+        data.CoolingLevel++;
+
+        VisualManager.Instance.UpdatePrinters();
+
+        return true;
+    }
+
+    public static bool PrinterHasMaxInk(PrinterStorageData data)
+    {
+        return (data.CurrentInk == data.PrinterType.InkPerLevel * data.InkLevel);
+    }
+
+    public static bool RefillPrinterInk(PrinterStorageData data)
+    {
+        data.CurrentInk = data.PrinterType.InkPerLevel * data.InkLevel;
+
+        VisualManager.Instance.UpdatePrinters();
 
         return true;
     }

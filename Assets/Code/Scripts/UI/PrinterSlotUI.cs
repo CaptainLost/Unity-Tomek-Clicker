@@ -28,8 +28,8 @@ public class PrinterSlotUI : MonoBehaviour
 
     public void SetSelectStage()
     {
-        addWindow.SetActive(true);
-        selectWindow.gameObject.SetActive(false);
+        addWindow.SetActive(!selectWindow.gameObject.activeSelf);
+        selectWindow.gameObject.SetActive(!addWindow.activeSelf);
 
         manageWindow.gameObject.SetActive(false);
     }

@@ -5,7 +5,6 @@ using BreakInfinity;
 
 public abstract class UpgradeLogic : MonoBehaviour
 {
-    [SerializeField] protected UpgradeSO upgrade;
     [SerializeField] protected float tickTime;
 
     private IEnumerator coroutine;

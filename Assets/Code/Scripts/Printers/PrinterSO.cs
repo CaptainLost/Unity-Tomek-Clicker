@@ -1,3 +1,4 @@
+using BreakInfinity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,4 +18,13 @@ public class PrinterSO : ScriptableObject
     [field: Header("Variables")]
     [field: SerializeField] public float MinTemperature { get; private set; }
     [field: SerializeField] public float MaxTemperature { get; private set; }
+    [field: SerializeField] public float ProgressPerSpeedLevel { get; private set; }
+    [field: SerializeField] public float InkPerLevel { get; private set; }
+
+    [field: Header("Tick Settings")]
+    [field: SerializeField] public float InkConsumptionPerTick { get; private set; }
+
+    [field: Header("Points")]
+    [field: SerializeField] public BigDouble RewardPerPrint { get; private set; }
+    [field: SerializeField] public BigDouble CostPerInkRefill { get; private set; }
 }

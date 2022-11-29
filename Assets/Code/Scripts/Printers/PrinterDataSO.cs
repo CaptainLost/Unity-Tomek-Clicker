@@ -10,15 +10,20 @@ public class PrinterStorageData
     public PrinterStorageData(PrinterSO printerType)
     {
         PrinterType = printerType;
+
+        CurrentInk = printerType.InkPerLevel;
     }
 
     [field: SerializeField] public PrinterSO PrinterType { get; private set; }
 
-    [field: SerializeField] public int SpeedLevel { get; set; } = 0;
-    [field: SerializeField] public int InkLevel { get; private set; } = 0;
-    [field: SerializeField] public int CoolingLevel { get; private set; } = 0;
+    [field: SerializeField] public int SpeedLevel { get; set; } = 1;
+    [field: SerializeField] public int InkLevel { get; set; } = 1;
+    [field: SerializeField] public int CoolingLevel { get; set; } = 1;
 
-    [field: SerializeField] public float CurrentTemperature { get; private set; } = 20f;
+    [SerializeField] public float PrintProgress = 0f;
+    [SerializeField] public float CurrentInk = 0f;
+    [SerializeField] public float CurrentTemperature = 20f;
+    [SerializeField] public bool IsOverheated = false;
 }
 
 [CreateAssetMenu(fileName = "New Printer Data", menuName = "CptLost/Data/Printer Data")]

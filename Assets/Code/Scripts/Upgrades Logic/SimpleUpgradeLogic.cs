@@ -3,6 +3,7 @@ using BreakInfinity;
 
 public class SimpleUpgradeLogic : UpgradeLogic
 {
+    [SerializeField] protected UpgradeSO upgrade;
     [SerializeField] private BigDouble baseClickPoints = 0.1f;
 
     protected override void Tick()

@@ -20,3 +20,12 @@ MonoBehaviour:
   <MaxLevelCooling>k__BackingField: 20
   <MinTemperature>k__BackingField: 0
   <MaxTemperature>k__BackingField: 0
+  <ProgressPerSpeedLevel>k__BackingField: 0.2
+  <InkPerLevel>k__BackingField: 100
+  <InkConsumptionPerTick>k__BackingField: 1
+  <RewardPerPrint>k__BackingField:
+    mantissa: 2
+    exponent: 2
+  <CostPerInkRefill>k__BackingField:
+    mantissa: 5
+    exponent: 1
