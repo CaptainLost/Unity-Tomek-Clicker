@@ -102,7 +102,7 @@ public class DataManager : MonoBehaviour
     {
         BigDouble price = UpgradeHelper.CalculatePrice(upgradeData);
 
-        if (GetAmountOfUpgrade(upgradeData) < upgradeData.MaxAmount && HasPoints(price))
+        if ((upgradeData.MaxAmount <= 0 || GetAmountOfUpgrade(upgradeData) < upgradeData.MaxAmount) && HasPoints(price))
         {
             RemovePoints(price);
             AddUpgrade(upgradeData, 1);
